@@ -10,7 +10,7 @@ Install json-server
 ### `npm run server`
 
 Start the server (backend).<br>
-Open [http://localhost:8082](http://localhost:8082) to get all users.
+Open [http://localhost:8082/users](http://localhost:8082/users) to get all users.
 
 ### `npm start`
 
