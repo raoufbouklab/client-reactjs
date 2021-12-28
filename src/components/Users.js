@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Button} from "react-bootstrap";
 
 class Users extends Component {
     constructor(props) {
@@ -10,19 +9,15 @@ class Users extends Component {
         };
     }
 
-
     componentDidMount() {
         this.setState({isLoading: true});
-
-        fetch('http://localhost:8082//api/v1/users/')
+        fetch('http://localhost:8082/users')
             .then(response => response.json())
             .then(data => this.setState({users: data, isLoading: false}));
     }
 
     render() {
         const {users, isLoading} = this.state;
-        console.log(users);
-
         if (isLoading) {
             return <p>Loading...</p>;
         }
@@ -30,31 +25,35 @@ class Users extends Component {
         return (
             <div className="content">
                 <div className="col-md-offset-1 col-md-10">
-                    <h1>Page</h1>
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>Users : </th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {
-                            users.map(function(item, key) {
-                                return (
-                                    <tr key = {key}>
-                                        <td>{item.id}</td>
-                                        <td>{item.userName}</td>
-                                        <td>{item.email}</td>
-                                        <td>{item.password}</td>
-                                    </tr>
-                                )
-                            }.bind(this))
-                        }
-                        </tbody>
-                    </table>
-                    <br>
-                    </br>
-                    <Button variant="success">Add user</Button>
+                    <h1>List of users</h1>
+
+                    <div className="occurrences-template">
+                        <table className="table table-striped table-bordered starter-template">
+                            <thead className="thead-dark">
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Username</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Password</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {
+                                users.map(function(item, key) {
+                                    return (
+                                        <tr key = {key}>
+                                            <td>{item.id}</td>
+                                            <td>{item.username}</td>
+                                            <td>{item.email}</td>
+                                            <td>{item.password}</td>
+                                        </tr>
+                                    )
+                                }.bind(this))
+                            }
+                            </tbody>
+                        </table>
+                    </div>
+
                 </div>
             </div>
         );

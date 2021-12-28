@@ -5,7 +5,6 @@ export default class Title extends Component {
         return (
             <div className="title">
                 <div className="col-md-10 col-md-offset-1">
-                    <h1>Home</h1>
                 </div>
             </div>
         );

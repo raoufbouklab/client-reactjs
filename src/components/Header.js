@@ -7,12 +7,12 @@ export default class Header extends Component {
             <div className="header">
                 <div className="col-md-10 col-md-offset-1">
                     <div className="col-sm-8 col-md-8">
-                        <h1>Header</h1>
+                        <h1>Bookstore</h1>
                     </div>
                     <div className="col-sm-8 col-md-8">
                         <nav className="navbar">
                             <ul className="navbar-nav navbar-right">
-                                <li className="lang"><NavLink to="/fr/home">Français</NavLink></li>
+                                <li className="register"><NavLink to="/register">Register</NavLink></li>
                                 <li className="login"><NavLink to="/login">Login</NavLink></li>
                             </ul>
                         </nav>
